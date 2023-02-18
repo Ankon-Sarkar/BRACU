@@ -35,7 +35,7 @@ public class LinkedList{
       c++;
       h=h.next;
     }
-    return c; // please remove this line!
+    return c; 
   }
   
   /* prints the elements in the list */
@@ -53,7 +53,7 @@ public class LinkedList{
   public Node nodeAt(int idx){
   Node h=head;
   if(idx<0 || idx>=countNode()){
-    return null; // please remove this line!
+    return null; 
   }
   else{
     int c=0;
@@ -73,7 +73,7 @@ public class LinkedList{
   public Object get(int idx){
      Node h=head;
   if(idx<0 || idx>=countNode()){
-    return null; // please remove this line!
+    return null; 
   }
   else{
     int c=0;
@@ -97,7 +97,7 @@ public class LinkedList{
   public Object set(int idx, Object elem){
      Node h=head;
   if(idx<0 || idx>=countNode()){
-    return null; // please remove this line!
+    return null; 
   }
   else{
     int c=0;
@@ -128,7 +128,7 @@ public class LinkedList{
         c++;
         h=h.next;
         }
-     return -1; // please remove this line!
+     return -1; 
 }
   
  
@@ -143,7 +143,7 @@ public class LinkedList{
        }
        h=h.next;
     }
-    return false; // please remove this line!
+    return false; 
   }
 //  
   // Makes a duplicate copy of the given List. Returns the reference of the duplicate list.
@@ -159,7 +159,7 @@ public class LinkedList{
      n1=n2;
      h=h.next;
    }
-    return head; // please remove this line!
+    return head; 
   }
   
   // Makes a reversed copy of the given List. Returns the head reference of the reversed list.
@@ -177,7 +177,6 @@ public class LinkedList{
    }
    head=n1;
     return head;
-   // return null; // please remove this line!
   }
   
   /* inserts Node containing the given element at the given index
@@ -237,7 +236,7 @@ public class LinkedList{
     return del.element;
   }
   }
-   //return null; // please remove this line!
+   
   
   
   // Rotates the list to the left by 1 position.
@@ -259,11 +258,6 @@ public class LinkedList{
     Node h=head;
     int c=0;
     while(h.next!=null){
-     
-      if(c==countNode()){
-        h.next=null;
-      }
-       c++;
       h=h.next;
   }
 
