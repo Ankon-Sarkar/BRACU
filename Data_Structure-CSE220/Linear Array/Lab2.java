@@ -12,7 +12,7 @@ System.out.println("\n///// TEST 02: Print Reverse example /////");
     printArray(a); // This Should Print: { 10, 20, 30, 40, 50, 60 } 
     printReverse(a); // This Should Print: { 60, 50, 40, 30, 20, 10 } 
     System.out.println("\n///// TEST 03: Reverse Array example /////");
-    reverseArray(b);
+    b=reverseArray(b);
     printArray(b); // This Should Print: { 60, 50, 40, 30, 20, 10 } 
     
     System.out.println("\n///// TEST 04: Shift Left k cell example /////");
@@ -80,6 +80,7 @@ System.out.println("\n///// TEST 02: Print Reverse example /////");
     }
     System.out.println();
   }
+    
    public static int [] copyArray(int [] source, int len){
    int [] a=new int[len];
    for(int i=0;i<a.length;i++){
@@ -93,15 +94,21 @@ System.out.println("\n///// TEST 02: Print Reverse example /////");
   }
      System.out.println();
 }
-   public static void reverseArray(int [] source){
-   int []a=new int [source.length];
-   int j=0;
-   for(int i=source.length-1;i>=0;i--){
-     a[j]=source[i];
-    j++;
-  }
-   source=a;
-}
+    
+ public static  int[] reverseArray(int[] source) {
+       int i=0;
+       int j=source.length-1;
+        while (i < j){
+            System.out.println("*****");
+            int temp=source[i];
+            source[i]=source[j];
+            source[j]=temp;
+            i++;
+            j--;
+        }
+        return source;
+    }
+    
     public static int [] shiftLeft(int [] source, int k){
       for(int i=1;i<=k;i++){
         for(int j=0;j<source.length-1;j++){
@@ -111,6 +118,7 @@ System.out.println("\n///// TEST 02: Print Reverse example /////");
       }
     return source;     
   }
+    
     public static int [] rotateLeft(int [] source, int k){
       for(int i=1;i<=k;i++){
         int temp=source[0];
@@ -121,6 +129,7 @@ System.out.println("\n///// TEST 02: Print Reverse example /////");
       }
     return source;    
   }
+    
     public static int [] shiftRight(int [] source, int k){
       for(int i=1;i<=k;i++){
         for(int j=source.length-1;j>0;j--){
