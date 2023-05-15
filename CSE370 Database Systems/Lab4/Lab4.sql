@@ -1,0 +1,10 @@
+select employee_id, last_name, email, salary, department_id from employees where salary in (select max(salary) from employees group by department_id);
+select employee_id, last_name, email, commission_pct, department_id from employees where salary in (select max(commission_pct) from employees group by department_id);
+select employee_id, last_name, email, commission_pct, department_id from employees where salary in (select min(commission_pct) from employees group by department_id);
+select employee_id, last_name, email, commission_pct, department_id from employees where department_id=5 and commission_pct> any (select commission_pct from employees where department_id=7);
+select employee_id, last_name, email, commission_pct, department_id from employees where department_id=5 and salary> any (select salary from employees where department_id=7);
+select department_id,job_id salary from employees e1 where exists (select *from employees e2 where e1.department_id=e2.department_id and e1.salary<e2.salary);
+select distinct managar_id where managar_id = any( select managar_id where salary<2500);
+select distinct managar_id where managar_id = any( select managar_id where commission_pct <18.25);
+select managar_id from employees where salary>3500 group by managar_id;
+select managar_id from employees e1 where not exists (select *from employees e2 where e1.department_id=e2.department_id and e2.commission_pct<45.05);
