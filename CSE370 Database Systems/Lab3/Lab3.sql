@@ -1,0 +1,17 @@
+select distinct multiplier from users order by multiplier desc;
+select id,influence_count from users order by influence_count;
+select distinct  member_since from users order by member_since;
+select name, email, member_since from users where member_since='2020-07-01';
+select name, email, member_since from users where member_since<'2020-07-01';
+select name, email, member_since from users where  member_since between '2020-07-31' and '2020-08-15';
+select name, email, member_since from users where  influence_count>=750000;
+select name, email, member_since from users where  member_since between '2020-07-31' and '2020-08-15' and influence_count>750000;
+select id,email from users where email like '%com';
+select id,email from users where email like '%djangoproject%';
+select name,email from users where influence_count=(select max(influence_count) from users);
+select name,email from users order by member_since desc limit 5;
+select count(*) from users;
+select count(distinct multiplier) from users;
+select count(*) from users where member_since>'2020-04-30';
+select name from users where influence_count>=700000 and multiplier%2=0 order by name desc;
+select multiplier, count(*) from users where member_since>'2020-04-30' group by multiplier;
